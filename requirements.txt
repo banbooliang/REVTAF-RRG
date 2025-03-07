@@ -1,0 +1,9 @@
+transformers==4.19.2
+torch==2.4.0
+torchvision==0.12.0
+opencv-python==4.8.1.78
+scipy
+pandas
+scikit-learn
+timm==0.9.10
+fairscale

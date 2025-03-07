@@ -1,0 +1,13 @@
+CUDA_VISIBLE_DEVICES=4 python main_test.py \
+--n_gpu 1 \
+--image_dir ./data/mimic_cxr/ \
+--ann_path ./data/mimic_cxr/mimic_annotation_promptmrg.json \
+--dataset_name mimic_cxr \
+--gen_max_len 150 \
+--gen_min_len 100 \
+--batch_size 16 \
+--save_dir results/mimic_cxr \
+--seed 456789 \
+--clip_k 21 \
+--beam_size 3 \
+--load_pretrained results/mimic_cxr/model_best.pth
