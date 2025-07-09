@@ -32,15 +32,15 @@ pip install -r requirements.txt
 ```
 
 ## Training
-- Download the **MIMIC-CXR** dataset from the [physionet](https://www.physionet.org/content/mimic-cxr-jpg/2.0.0/) and put it into ./data/mimic_cxr/ forder.
-- Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen) and put it into ./data/iu_xray/ forder.
+- Download the **MIMIC-CXR** dataset from the [physionet](https://www.physionet.org/content/mimic-cxr-jpg/2.0.0/), and the annotation file can be downloaded from the [Google Drive](https://drive.google.com/file/d/1qR7EJkiBdHPrskfikz2adL-p9BjMRXup/view?usp=sharing). Put them into ./data/mimic_cxr/ forder.
+      - Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen), and the annotation file can be downloaded from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Put them into ./data/iu_xray/ forder.
 
 ```bash 
 bash train_mimic_cxr.sh 
 ```
+The model will be saved into the results/mimic_cxr forder after you run the above code.
 
 ## Test
-- Download the [pretrained model](https://cocodataset.org/#download).
 
 ```bash
 bash test_mimic_cxr.sh 
