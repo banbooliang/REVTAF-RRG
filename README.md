@@ -25,7 +25,7 @@ Automated radiology report generation is essential for improving diagnostic effi
 ## Setup
 ```bash
 # Clone the repo
-git clone git@github.com:banbooliang/REVTAF-Radiology-Report-Generation
+git clone git@github.com:banbooliang/REVTAF-RRG
 # Create Env and install basic packages
 conda create -n reportenv python=3.10
 pip install -r requirements.txt
