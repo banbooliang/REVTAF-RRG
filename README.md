@@ -51,7 +51,7 @@ bash test_iu_xray.sh
 ## Citation
 If you find our repository useful, please star this repo and cite our paper.
 ```bibtex
-@misc{zhan2025,
+@misc{liang2025,
       title={Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation}, 
       author={Qin Zhou and Guoyan Liang and Xindi Li and Jingyuan Chen and Zhe Wang and Chang Yao and Sai Wu},
       year={2025},
