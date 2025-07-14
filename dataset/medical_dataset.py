@@ -83,7 +83,7 @@ class generation_train(Dataset):
 
         region_txt = np.load(os.path.join(self.image_root, 'region_txt_embeddings', image_path[0]).replace('.jpg', '.npy'))  
         region_txt = torch.from_numpy(region_txt).to(dtype=torch.float32) # 75,768
-        global_txt_path = self.ann[int(list(self.hash_dist[index].keys())[0])]['image_path'][0].replace('.jpg', '.npy')
+        global_txt_path = self.ann[self.hash_dist[index][0])]['image_path'][0].replace('.jpg', '.npy')
         
         global_txt = np.load(os.path.join(self.image_root, 'medclip_txt_embeddings', global_txt_path)) # max_seq_num,768
         global_txt = torch.from_numpy(global_txt).to(dtype=torch.float32)
