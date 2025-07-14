@@ -20,8 +20,7 @@
 <img width="650" alt="image" src="figure1.png">
 </div>
 
-Automated radiology report generation is essential for improving diagnostic efficiency and reducing the workload of medical professionals. However, existing methods face significant challenges, such as disease class imbalance and insufficient cross-modal fusion. To address these issues, we propose the learnable Retrieval Enhanced Visual-Text Alignment and Fusion (REVTAF) framework, which effectively tackles both class imbalance and visual-text fusion in report generation. REVTAF incorporates two core components: (1) a Learnable Retrieval Enhancer (LRE) that utilizes semantic hierarchies from hyperbolic space and intra-batch context through a ranking-based metric. LRE adaptively retrieves the most relevant reference reports, enhancing image representations, particularly for underrepresented (tail) class inputs; and (2) a fine-grained visual-text alignment and fusion strateg  that ensures consistency across multi-source cross-attention maps for precise alignment. This component further employs an optimal transport-based cross-attention mechanism to dynamically integrate task-relevant textual knowledge for improved report generation. By combining adaptive retrieval with multi-source alignment and fusion, REVTAF achieves fine-grained visual-text integration under weak image-report level supervision while effectively mitigating data imbalance issues. The experiments demonstrate that REVTAF outperforms state-of-the-art methods, achieving an average improvement of 7.4% on the MIMIC-CXR dataset and 2.9% on the IU X-Ray dataset. Comparisons with mainstream multimodal LLMs (e.g., GPT-series models), further highlight its superiority in radiology report generation.
-
+Automated radiology report generation is essential for improving diagnostic efficiency and reducing the workload of medical professionals. However, existing methods face significant challenges, such as disease class imbalance and insufficient cross-modal fusion. To address these issues, we propose the learnable Retrieval Enhanced Visual-Text Alignment and Fusion (REVTAF) framework, which effectively tackles both class imbalance and visual-text fusion in report generation. REVTAF incorporates two core components: (1) a Learnable Retrieval Enhancer (LRE) that utilizes semantic hierarchies from hyperbolic space and intra-batch context through a ranking-based metric. LRE adaptively retrieves the most relevant reference reports, enhancing image representations, particularly for underrepresented (tail) class inputs; and (2) a fine-grained visual-text alignment and fusion strateg  that ensures consistency across multi-source cross-attention maps for precise alignment. This component further employs an optimal transport-based cross-attention mechanism to dynamically integrate task-relevant textual knowledge for improved report generation. By combining adaptive retrieval with multi-source alignment and fusion, REVTAF achieves fine-grained visual-text integration under weak image-report level supervision while effectively mitigating data imbalance issues. The experiments demonstrate that REVTAF outperforms state-of-the-art methods, achieving an average improvement of 7.4% on the MIMIC-CXR dataset and 2.9% on the IU X-Ray dataset. Comparisons with mainstream multimodal LLMs (e.g., GPT-series models), further highlight its superiority in radiology report generation1.
 ## Setup
 ```bash
 # Clone the repo
@@ -32,16 +31,28 @@ pip install -r requirements.txt
 ```
 
 ## Training
-- Download the **MIMIC-CXR** dataset from the [physionet](https://www.physionet.org/content/mimic-cxr-jpg/2.0.0/), and the annotation file can be downloaded from the [Google Drive](https://drive.google.com/file/d/1qR7EJkiBdHPrskfikz2adL-p9BjMRXup/view?usp=sharing). Put them into ./data/mimic_cxr/ forder.
+- Download the **MIMIC-CXR** dataset from the [physionet](https://www.physionet.org/content/mimic-cxr-jpg/2.0.0/), and obtain the corresponding annotation file from [Google Drive](https://drive.google.com/file/d/1qR7EJkiBdHPrskfikz2adL-p9BjMRXup/view?usp=sharing). Put them into ./data/mimic_cxr/ forder. 
+- Additionally, download the following files and place them in the same ./data/mimic_cxr/ folder: \
+`medclip_text_features.json`
+`labels_indices_{split}.json` `image_region_score_{split}.json` `hash_distance.json` `medclip_txt_embeddings.tar.gz` `region_txt_embeddings.tar.gz`
 
-- Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen), and the annotation file can be downloaded from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Put them into ./data/iu_xray/ forder.
+These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]{}.
 
+
+- Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen) and the annotation file from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Save them in the ./data/iu_xray/ directory.
+
+- Similarly, download the `region_txt_embeddings.tar.gz` and `medclip_txt_embeddings.tar.gz` files for IU X-Ray from [here]{} and place them in ./data/iu_xray/.
+
+- To evaluate clinical efficacy, download the `chexbert.pth` model from [Google Drive](https://drive.google.com/file/d/1Qj5yM62FlASGRnW1hH0DDtCENuqGtt7L/view?usp=sharing) and place it in checkpoints/stanford/chexbert/.
+
+- Run the following command to start training:
 ```bash 
 bash train_mimic_cxr.sh 
 ```
-The model will be saved into the results/mimic_cxr forder after you run the above code.
+The trained model will be saved in the results/mimic_cxr/ directory.
 
 ## Test
+- Run the following command to start testing on the MIMIC-CXR test set and IU X-Ray dataset, respectively:
 
 ```bash
 bash test_mimic_cxr.sh 
