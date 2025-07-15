@@ -75,7 +75,7 @@ If you find our repository useful, please star this repo and cite our paper.
 ```bibtex
 @misc{zhou2025learnableretrievalenhancedvisualtext,
       title={Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation}, 
-      author={Qin Zhou and Guoyan Liang and Xindi Li and Jingyuan Chen and Wang Zhe and Chang Yao and Sai Wu},
+      author={Qin Zhou and Guoyan Liang and Xindi Li and Jingyuan Chen and Zhe Wang and Chang Yao and Sai Wu},
       year={2025},
       eprint={2507.07568},
       archivePrefix={arXiv},
