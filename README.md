@@ -30,21 +30,32 @@ conda create -n reportenv python=3.10
 pip install -r requirements.txt
 ```
 
-## Training
+## Download
 - Download the **MIMIC-CXR** dataset from the [physionet](https://www.physionet.org/content/mimic-cxr-jpg/2.0.0/), and obtain the corresponding annotation file from [Google Drive](https://drive.google.com/file/d/1qR7EJkiBdHPrskfikz2adL-p9BjMRXup/view?usp=sharing). Put them into ./data/mimic_cxr/ forder. 
-- Additionally, download the following files and place them in the same ./data/mimic_cxr/ folder: \
-`medclip_text_features.json`
-`labels_indices_{split}.json` `image_region_score_{split}.json` `hash_distance.json` `medclip_txt_embeddings.tar.gz` `region_txt_embeddings.tar.gz`
+- Additionally, download the following files and place them in the same ./data/mimic_cxr/ folder: 
 
-These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]{}.
+`medclip_text_features.json`
+
+`labels_indices_{split}.json` 
+
+`image_region_score_{split}.json` 
+
+`hash_distance.json` 
+
+`medclip_txt_embeddings.tar.gz` 
+
+`region_txt_embeddings.tar.gz`
+
+These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here](https://pan.baidu.com/s/1jTfB6u16mS8RvO7rBFWj6A?pwd=577y) and [here](https://pan.baidu.com/s/1eop9x5WqhnR1jQ0psxUwYg?pwd=vq27).
 
 
 - Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen) and the annotation file from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Save them in the ./data/iu_xray/ directory.
 
-- Similarly, download the `region_txt_embeddings.tar.gz` and `medclip_txt_embeddings.tar.gz` files for IU X-Ray from [here]{} and place them in ./data/iu_xray/.
+- Similarly, download the `region_txt_embeddings.tar.gz`, `medclip_txt_embeddings.tar.gz`, and `labels_indices_{split}.json` files for IU X-Ray from [here](https://pan.baidu.com/s/16DYCVFiiHLB_nz-j_4M7JQ?pwd=n1gq) and place them in ./data/iu_xray/.
 
 - To evaluate clinical efficacy, download the `chexbert.pth` model from [Google Drive](https://drive.google.com/file/d/1Qj5yM62FlASGRnW1hH0DDtCENuqGtt7L/view?usp=sharing) and place it in checkpoints/stanford/chexbert/.
 
+## Training
 - Run the following command to start training:
 ```bash 
 bash train_mimic_cxr.sh 
