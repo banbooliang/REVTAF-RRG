@@ -59,7 +59,9 @@ class generation_train(Dataset):
         self.indices = torch.stack(indices,dim=0)
         
         hash_dist_path = os.path.join(image_root, 'hash_distance.json')
-        self.hash_dist = json.load(open(hash_dist_path,'r'))
+        with open(hash_dist_path, 'r') as f:
+            self.hash_dist = [json.loads(line) for line in f]
+        # self.hash_dist = json.load(open(hash_dist_path,'r'))
         with open(os.path.join(image_root, 'image_region_score_train.json'), 'r') as f:
             r_i_score = [torch.tensor(json.loads(i.strip()),dtype=torch.float32) for i in f]
         self.r_i_score = torch.stack(r_i_score,dim=0) # 270790,75
@@ -83,7 +85,7 @@ class generation_train(Dataset):
 
         region_txt = np.load(os.path.join(self.image_root, 'region_txt_embeddings', image_path[0]).replace('.jpg', '.npy'))  
         region_txt = torch.from_numpy(region_txt).to(dtype=torch.float32) # 75,768
-        global_txt_path = self.ann[self.hash_dist[index][0])]['image_path'][0].replace('.jpg', '.npy')
+        global_txt_path = self.ann[self.hash_dist[index][0]]['image_path'][0].replace('.jpg', '.npy')
         
         global_txt = np.load(os.path.join(self.image_root, 'medclip_txt_embeddings', global_txt_path)) # max_seq_num,768
         global_txt = torch.from_numpy(global_txt).to(dtype=torch.float32)
