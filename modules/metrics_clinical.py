@@ -70,19 +70,19 @@ class CheXbertMetrics():
         recall_class = np.nan_to_num(tp_cls / (tp_cls + fn_cls))
         f1_class = np.nan_to_num(tp_cls / (tp_cls + 0.5 * (fp_cls + fn_cls)))
 
-            # score = {
-            #     # example-based CE metrics
-            #     'ce_precision': np.nan_to_num(tp_eg / (tp_eg + fp_eg)).mean(),
-            #     'ce_recall': np.nan_to_num(tp_eg / (tp_eg + fn_eg)).mean(),
-            #     'ce_f1': np.nan_to_num(tp_eg / (tp_eg + 0.5 * (fp_eg + fn_eg))).mean(),
-            #     'ce_num_examples': float(len(res_chexbert)),
-            # }
-        scores = {
+        score = {
             # example-based CE metrics
-            'ce_precision': precision_class,
-            'ce_recall': recall_class,
-            'ce_f1': f1_class,
+            'ce_precision': np.nan_to_num(tp_eg / (tp_eg + fp_eg)).mean(),
+            'ce_recall': np.nan_to_num(tp_eg / (tp_eg + fn_eg)).mean(),
+            'ce_f1': np.nan_to_num(tp_eg / (tp_eg + 0.5 * (fp_eg + fn_eg))).mean(),
             'ce_num_examples': float(len(res_chexbert)),
         }
+        # scores = {
+        #     # example-based CE metrics
+        #     'ce_precision': precision_class,
+        #     'ce_recall': recall_class,
+        #     'ce_f1': f1_class,
+        #     'ce_num_examples': float(len(res_chexbert)),
+        # }
         return scores
 
