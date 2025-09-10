@@ -46,7 +46,8 @@ pip install -r requirements.txt
 
 `region_txt_embeddings.tar.gz`
 
-These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here](https://pan.baidu.com/s/1jTfB6u16mS8RvO7rBFWj6A?pwd=577y) and [here](https://pan.baidu.com/s/1eop9x5WqhnR1jQ0psxUwYg?pwd=vq27).
+These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]( https://pan.baidu.com/s/1yRJjKVrsV4rLh-zQERSg2g?pwd=rnbm) and [here](https://pan.baidu.com/s/1eop9x5WqhnR1jQ0psxUwYg?pwd=vq27).
+These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]( https://pan.baidu.com/s/1yRJjKVrsV4rLh-zQERSg2g?pwd=rnbm) and [here]().
 
 
 - Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen) and the annotation file from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Save them in the ./data/iu_xray/ directory.
