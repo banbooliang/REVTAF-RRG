@@ -46,13 +46,12 @@ pip install -r requirements.txt
 
 `region_txt_embeddings.tar.gz`
 
-These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]( https://pan.baidu.com/s/1yRJjKVrsV4rLh-zQERSg2g?pwd=rnbm) and [here](https://pan.baidu.com/s/1eop9x5WqhnR1jQ0psxUwYg?pwd=vq27).
-These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]( https://pan.baidu.com/s/1yRJjKVrsV4rLh-zQERSg2g?pwd=rnbm) and [here]().
+These are pre-extracted image and text features generated using the pretrained MedKLIP models on the MIMIC-CXR dataset. You can download them from [here]( https://pan.baidu.com/s/1yRJjKVrsV4rLh-zQERSg2g?pwd=rnbm) and [here](https://pan.baidu.com/s/1afGRt5zi8EVBMzkDLG4Ypw?pwd=7kq5).
 
 
 - Download the **IU X-Ray** model from the [R2Gen](https://github.com/zhjohnchan/R2Gen) and the annotation file from the [Google Drive](https://drive.google.com/file/d/1zV5wgi5QsIp6OuC1U95xvOmeAAlBGkRS/view?usp=sharing). Save them in the ./data/iu_xray/ directory.
 
-- Similarly, download the `region_txt_embeddings.tar.gz`, `medclip_txt_embeddings.tar.gz`, and `labels_indices_{split}.json` files for IU X-Ray from [here](https://pan.baidu.com/s/16DYCVFiiHLB_nz-j_4M7JQ?pwd=n1gq) and place them in ./data/iu_xray/.
+- Similarly, download the `region_txt_embeddings.tar.gz`, `medclip_txt_embeddings.tar.gz`, and `labels_indices_{split}.json` files for IU X-Ray from [here](https://pan.baidu.com/s/10K__qMfQS2XD03AP9gSP2Q?pwd=gaky) and place them in ./data/iu_xray/.
 
 - To evaluate clinical efficacy, download the `chexbert.pth` model from [Google Drive](https://drive.google.com/file/d/1Qj5yM62FlASGRnW1hH0DDtCENuqGtt7L/view?usp=sharing) and place it in checkpoints/stanford/chexbert/.
 
