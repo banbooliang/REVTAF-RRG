@@ -84,5 +84,5 @@ class CheXbertMetrics():
         #     'ce_f1': f1_class,
         #     'ce_num_examples': float(len(res_chexbert)),
         # }
-        return scores
+        return score
 
