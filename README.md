@@ -6,7 +6,6 @@ This repository is the official implementation of [REVTAF](https://arxiv.org/abs
 > Qin Zhou, Guoyan Liang, Xindi Li, Jingyuan Chen, Zhe Wang, Chang Yao, Sai Wu<br>
 > [pdf](https://arxiv.org/abs/2507.07568)
 
-## Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation
 
 <!-- <div align="center">
 
