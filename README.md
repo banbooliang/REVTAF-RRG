@@ -13,10 +13,6 @@ This repository is the official implementation of [REVTAF](https://arxiv.org/abs
 
 <div align="center">
 
-<h1> Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation</h1>
-
-<h5 align="center"> If you find this project useful, please give us a star🌟.
-
 </div>
 
 ## Framework
