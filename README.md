@@ -1,8 +1,14 @@
+# REVTAF
 
+This repository is the official implementation of [REVTAF](https://arxiv.org/abs/2507.07568) [ICCV-2025].
+
+> **Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation** <br>
+> Qin Zhou, Guoyan Liang, Xindi Li, Jingyuan Chen, Zhe Wang, Chang Yao, Sai Wu<br>
+> [pdf](https://arxiv.org/abs/2507.07568)
+
+## Learnable Retrieval Enhanced Visual-Text Alignment and Fusion for Radiology Report Generation
 
 <!-- <div align="center">
-
-## Vision-R1: Evolving Human-Free Alignment in Large Vision-Language Models via Vision-Guided Reinforcement Learning
 
 </div> -->
 
